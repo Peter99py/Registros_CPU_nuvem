@@ -1,7 +1,7 @@
 import duckdb
 import pandas as pd
 
-df = pd.read_csv(r"src\queries\data.csv", parse_dates=["time"])
+df = pd.read_csv("src/queries/data.csv", parse_dates=["time"])
 duckdb.register("raw_data", df)
 
 # temperatura vs core speed

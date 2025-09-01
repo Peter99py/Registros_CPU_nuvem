@@ -5,7 +5,6 @@ from src.queries.queries import time_vs_temp, temp_vs_speed, time_vs_power, temp
 st.set_page_config(page_title="Meu Processador", layout="wide")
 
 st.markdown("<h1 style='text-align: center; color: black;'>Meu Processador</h1>", unsafe_allow_html=True)
-st.link_button("🔗 Acesse aqui o repositório do projeto no GitHub", "https://github.com/Peter99py/Registros_CPU")
 
 df_faixas_temp = faixas_temp()
 df_temp_vs_speed = temp_vs_speed()
@@ -53,7 +52,7 @@ with aba_series:
         )
         st.altair_chart(grafico, use_container_width=True)
 
-    st.caption("Compare lado a lado: picos de temperatura tendem a coincidir com picos de energia?")
+    st.caption("Padrões da temperatura e consumo de energia durante o dia.")
 
 with aba_relacoes:
     st.subheader("Relações entre variáveis")
@@ -79,4 +78,4 @@ with aba_relacoes:
         )
         st.altair_chart(grafico, use_container_width=True)
 
-    st.caption("Veja como a velocidade e o consumo de energia variam conforme a temperatura do núcleo.")
+    st.caption("Variações da velocidade e energia do CPU em relação à temperatura.")

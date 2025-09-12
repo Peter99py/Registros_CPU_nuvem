@@ -46,12 +46,11 @@ def dias_disponiveis(year=None, month=None):
 
 # descritivo da temperatura
 def resumo_temp(year=None, month=None, day=None):
-    engine = get_engine()
-    where_sql, params = filtro_data(year, month, day)
+    where_sql = filtro_data(year, month, day)
     query = f"""
     WITH filtrado AS(
     SELECT DATE(time) AS time, core_temp_0
-    FROM coretemp.raw_data
+    FROM raw_data
     {where_sql}
     )
 
